@@ -1,38 +1,275 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo img {
+  width: 40px;
+  /* Adjust logo size */
+  height: 40px;
+  /* Adjust logo size */
+  margin-right: 10px;
+}
+
+.logo-label {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  /* Center the navigation links horizontally */
+}
+
+.nav-list li {
+  margin: 0 15px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.content {
+  /* Adjust padding or margin to prevent content from being overlapped by the sticky header */
+  padding-top: 100px;
+  /* Adjust as needed */
+}
+
+.hero {
+  position: relative;
+  background-image: url('/public/Joints-su.jpg');
+  /* Replace with the actual image URL */
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  /* Adjust the height as needed */
+  color: #ffffff;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  /* Adjust the left spacing as needed */
+  transform: translateY(-50%);
+  width: 40%;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.email-form {
+  display: flex;
+  align-items: center;
+}
+
+.email-form input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  width: 70%;
+}
+
+.email-form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff9900;
+  color: #ffffff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+
+.info-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 50px 0;
+}
+
+.info-item {
+  display: flex;
+  width: 80%;
+  margin: 40px 0;
+}
+
+.info-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.info-image {
+  flex: 1;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.info-image img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.info-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.info-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.about-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  border-radius: 50%;
+  width: 200px;
+  /* Adjust the size as needed */
+  height: 200px;
+  /* Adjust the size as needed */
+}
+
+.reservation-section {
+  width: 500px;
+  text-align: left;
+  padding: 50px 50px;
+}
+
+.reservation-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.reservation-form label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.reservation-form input {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.reservation-form button {
+  padding: 10px 20px;
+  background-color: #ff9900;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reservation-form button:hover {
+  background-color: #e68400;
+}
+
+.footer {
+  background-color: #333333;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social-links {
+  margin-bottom: 15px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-links img {
+  width: 30px;
+  /* Adjust the size of social icons */
+  height: 30px;
+  /* Adjust the size of social icons */
+  vertical-align: middle;
+}
+
+.footer p {
+  font-size: 1rem;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }

@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import { MainLayout } from './layouts';
 
 function App() {
   return (
     <div className="App">
-      dinoo
+      <MainLayout />
     </div>
   );
 }

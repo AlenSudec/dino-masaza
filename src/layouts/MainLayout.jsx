@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Header } from "../components";
+import { Footer, Header, WebGiViewer } from "../components";
 import { AboutSection, ReservationSection, HeroSection, InfoSection } from "../sections";
 
 export function MainLayout() {
@@ -7,10 +7,11 @@ export function MainLayout() {
         <div>
             <Header />
             <div className="content">
-                <HeroSection />
+                {/* <HeroSection />
                 <InfoSection />
                 <AboutSection />
-                <ReservationSection />
+                <ReservationSection /> */}
+                <WebGiViewer />
             </div>
             <Footer />
         </div>

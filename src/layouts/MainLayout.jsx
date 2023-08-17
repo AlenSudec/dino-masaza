@@ -4,13 +4,13 @@ import { AboutSection, ReservationSection, HeroSection, InfoSection } from "../s
 
 export function MainLayout() {
     return (
-        <div>
+        <div className="main-layout">
             <Header />
             <div className="content">
                 <HeroSection />
                 <InfoSection />
                 <AboutSection />
-                <ReservationSection />
+                {/* <ReservationSection /> */}
             </div>
             <Footer />
         </div>

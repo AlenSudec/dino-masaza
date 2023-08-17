@@ -3,6 +3,11 @@ body {
   font-family: Arial, sans-serif;
 }
 
+button {
+  background-color: white;
+  border: 0px;
+}
+
 
 .sticky-header {
   position: fixed;
@@ -13,9 +18,17 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   display: flex;
+  padding-bottom: 10px;
+  padding-top: 10px;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+}
+
+.header-content {
+  width: 100%;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {
@@ -24,16 +37,16 @@ body {
 }
 
 .logo img {
-  width: 40px;
+  width: 30px;
   /* Adjust logo size */
-  height: 40px;
+  height: 30px;
   /* Adjust logo size */
   margin-right: 10px;
 }
 
 .logo-label {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .nav-container {
@@ -41,52 +54,97 @@ body {
   align-items: center;
 }
 
+.sidemenu {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-sidemenu {
+  width: 30px;
+  height: 30px;
+}
+
+.sidemenu-close {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.close-sidemenu-btn {
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.sidemenu-content {
+  padding: 50px;
+}
+
+.hamburger {
+  width: 30px;
+  height: 30px;
+}
+
 .nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
+  gap: 100px;
+  width: 100%;
   justify-content: center;
+
   /* Center the navigation links horizontally */
 }
 
 .nav-list li {
-  margin: 0 15px;
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-list li a {
+  font-size: 2rem;
+  text-align: center;
   text-decoration: none;
   color: #333333;
 }
 
 .content {
   /* Adjust padding or margin to prevent content from being overlapped by the sticky header */
-  padding-top: 100px;
+  padding-top: 75px;
   /* Adjust as needed */
 }
 
 .hero {
-  position: relative;
-  background-image: url('/public/Joints-su.jpg');
+
+  background: url('/public/Joints-su.jpg') no-repeat;
+  background-color: rgb(163, 161, 161);
+  background-blend-mode: multiply;
   /* Replace with the actual image URL */
   background-size: cover;
   background-position: center;
-  height: 50vh;
+  padding-top: 20px;
+  padding-top: 40px;
   /* Adjust the height as needed */
   color: #ffffff;
+
+  padding-left: 20px;
 }
 
 .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 30px;
-  /* Adjust the left spacing as needed */
-  transform: translateY(-50%);
-  width: 40%;
+  padding-top: 10px;
+  padding-bottom: 70px;
+  width: 80%;
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 15px;
 }
 
@@ -96,6 +154,7 @@ body {
 }
 
 .email-form {
+  margin-top: 50px;
   display: flex;
   align-items: center;
 }
@@ -120,19 +179,21 @@ body {
 .info-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 50px 0;
+
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .info-item {
   display: flex;
-  width: 80%;
-  margin: 40px 0;
+  gap: 10px;
+  margin: 20px 0;
 }
 
 .info-content {
   flex: 1;
-  padding: 20px;
   background-color: #f2f2f2;
 }
 
@@ -149,19 +210,20 @@ body {
 }
 
 .info-content h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
 }
 
 .info-content p {
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 .about-section {
   display: flex;
-  align-items: center;
-  padding: 50px 0;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 .about-content {
@@ -187,7 +249,6 @@ body {
 }
 
 .about-image img {
-  border-radius: 50%;
   width: 200px;
   /* Adjust the size as needed */
   height: 200px;

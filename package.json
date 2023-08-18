@@ -13,7 +13,7 @@
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
-    "webgi": "https://storage.googleapis.com/dist.pixotronics.com/webgi/runtime/bundle-0.7.9.tgz"
+    "webgi": "https://dist.pixotronics.com/webgi/runtime/viewer-0.7.85.js"
   },
   "scripts": {
     "start": "react-scripts start",

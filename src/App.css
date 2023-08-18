@@ -8,6 +8,22 @@ button {
   border: 0px;
 }
 
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.webgi-container {
+  height: 90%;
+  width: 100%;
+}
+
+.webgi-viewer {
+  height: 100% !important;
+  width: 100% !important;
+  aspect-ratio: 1/1.7;
+}
+
 
 .sticky-header {
   position: fixed;

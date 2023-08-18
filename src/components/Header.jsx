@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export function Header() {
     const [sideMenuState, setSideMenuState] = useState("closed");
@@ -6,10 +7,12 @@ export function Header() {
     return (
         <header className='sticky-header'>
             <div className='header-content'>
-                <div className="logo">
-                    <img src="logo192.png" alt="Logo" />
-                    <span className="logo-label">Your Website</span>
-                </div>
+                <Link to="/">
+                    <div className="logo">
+                        <img src="logo192.png" alt="Logo" />
+                        <span className="logo-label">Your Website</span>
+                    </div>
+                </Link>
                 <button onClick={() => { setSideMenuState("opened"); disableScroll() }}>
                     <img className="hamburger" src="hamburger.png" alt="Sidemenu" />
                 </button>
@@ -38,10 +41,11 @@ function Sidemenu({ sideMenuState, setSideMenuState }) {
         <div className='sidemenu-content'>
             <nav className="nav-container">
                 <ul className="nav-list">
-                    <li onClick={closeSidemenu}><a href="#hero">Hero</a></li>
-                    <li onClick={closeSidemenu}><a href="#services">Services</a></li>
-                    <li onClick={closeSidemenu}><a href="#about">About</a></li>
-                    <li onClick={closeSidemenu}><a href="#reserve">Reserve</a></li>
+                    <li onClick={closeSidemenu}><Link to="/#hero">Hero</Link></li>
+                    <li onClick={closeSidemenu}><Link to="/#services">Services</Link></li>
+                    <li onClick={closeSidemenu}><Link to="/#about">About</Link></li>
+                    <li onClick={closeSidemenu}><Link to="/#reserve">Reserve</Link></li>
+                    <li onClick={closeSidemenu}><Link to={"/3d-view"}>3d viwer</Link></li>
                 </ul>
             </nav>
         </div>

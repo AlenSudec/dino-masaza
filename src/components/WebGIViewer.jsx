@@ -1,23 +1,27 @@
 import React, { useRef, useState, useCallback, forwardRef, useImperativeHandle, useEffect } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 export function WebGiViewer() {
 
-
-    return <Canvas >
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <OrbitControls />
+    return <Canvas
+    >
         <Model />
-        {/* <Box position={[-1.2, 0, 0]} />
-        <Box position={[1.2, 0, 0]} /> */}
+        <PerspectiveCamera makeDefault position={[0, 1, 10]} />
+        <pointLight position={[0, 0, 2]} intensity={10} />
+        <pointLight position={[0, 0, -2]} intensity={10} />
+        <pointLight position={[0, 2, -2]} intensity={10} />
+        <pointLight position={[0, 2, 2]} intensity={10} />
+        <pointLight position={[0, -2, -2]} intensity={10} />
+        <pointLight position={[0, -2, 2]} intensity={10} />
+        <OrbitControls />
     </Canvas>
 }
 
 function Model() {
-    const model = useLoader(GLTFLoader, "Poimandres.gltf");
+
+    const model = useLoader(GLTFLoader, "/scene.gltf");
     return <>
         <primitive object={model.scene} scale={0.5} />
     </>

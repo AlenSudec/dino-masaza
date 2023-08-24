@@ -40,7 +40,7 @@ export function Homepage() {
 
 export function ModelViewer() {
     return (
-        <div className="content">
+        <div className="content" style={{ height: "650px" }}>
             <WebGiViewer />
         </div>
     )

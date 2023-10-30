@@ -10,16 +10,29 @@ export function Header() {
                 <Link to="/">
                     <div className="logo">
                         <img src="logo192.png" alt="Logo" />
-                        <span className="logo-label">Your Website</span>
+                        <span className="logo-label">Osteopraktik</span>
                     </div>
                 </Link>
-                <button onClick={() => { setSideMenuState("opened"); disableScroll() }}>
+                <NavigationSection />
+                <button className='hamburger' onClick={() => { setSideMenuState("opened"); disableScroll() }}>
                     <img className="hamburger" src="hamburger.png" alt="Sidemenu" />
                 </button>
             </div>
-            <Sidemenu sideMenuState={sideMenuState} setSideMenuState={setSideMenuState} />
+            <Sidemenu sideMenuState={sideMenuState} setSideMenuState={setSideMenuState} className='sidemenu-content' />
         </header>
     )
+}
+
+function NavigationSection() {
+    return (<nav className="header-nav-container">
+        <ul className="header-nav-list">
+            <li><Link to="/#hero">Hero</Link></li>
+            <li ><Link to="/#services">Services</Link></li>
+            <li ><Link to="/#about">About</Link></li>
+            <li ><Link to="/reserve">Reserve</Link></li>
+            {/* <li onClick={closeSidemenu}><Link to={"/3d-view"}>3d viwer</Link></li> */}
+        </ul>
+    </nav>)
 }
 
 function Sidemenu({ sideMenuState, setSideMenuState }) {
@@ -44,8 +57,8 @@ function Sidemenu({ sideMenuState, setSideMenuState }) {
                     <li onClick={closeSidemenu}><Link to="/#hero">Hero</Link></li>
                     <li onClick={closeSidemenu}><Link to="/#services">Services</Link></li>
                     <li onClick={closeSidemenu}><Link to="/#about">About</Link></li>
-                    <li onClick={closeSidemenu}><Link to="/#reserve">Reserve</Link></li>
-                    <li onClick={closeSidemenu}><Link to={"/3d-view"}>3d viwer</Link></li>
+                    <li onClick={closeSidemenu}><Link to="/reserve">Reserve</Link></li>
+                    {/* <li onClick={closeSidemenu}><Link to={"/3d-view"}>3d viwer</Link></li> */}
                 </ul>
             </nav>
         </div>

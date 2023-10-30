@@ -1,39 +1,53 @@
 import React from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Footer, Header, ScrollToHashElement, WebGiViewer } from "../components";
-import { AboutSection, ReservationSection, HeroSection, InfoSection } from "../sections";
-import { BrowserRouter, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Homepage } from "../pages/homepage";
+import { ReservePage } from "../pages/reserve";
 
 let router = createBrowserRouter([
     {
         path: "/",
         Component() {
-            return <> <Header /><ScrollToHashElement /><Homepage /><Footer /></>
+            return (
+                <PageSkeletonWrapper>
+                    <ScrollToHashElement />
+                    <Homepage />
+                </PageSkeletonWrapper>
+            )
         }
     },
     {
-        path: "/3d-view",
+        path: '/reserve',
         Component() {
-            return <> <Header /><ScrollToHashElement /><ModelViewer /><Footer /></>
+            return  (
+                <PageSkeletonWrapper>
+                    <ReservePage />
+                </PageSkeletonWrapper>
+            )
         }
     }
+    //     {
+    //         path: "/3d-view",
+    //         Component() {
+    //             return <> <Header /><ScrollToHashElement /><ModelViewer /><Footer /></>
+    //         }
+    //     }
 ])
+
+export function PageSkeletonWrapper({ children }) {
+    return (
+        <>
+            <Header />
+                {children}
+            <Footer />
+        </>
+    )
+}
 
 export function MainLayout() {
     return (
         <div className="main-layout">
             <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
-        </div>
-    )
-}
-
-export function Homepage() {
-    return (
-        <div className="content">
-
-            <HeroSection />
-            <InfoSection />
-            <AboutSection />
-            {/* <ReservationSection /> */}
         </div>
     )
 }
